@@ -3,41 +3,42 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Domain for Sale 🌊</title>
+<title>Premium Domain for Sale 🌊</title>
 <meta name="color-scheme" content="light dark" />
 <style>
   .card::after {
   pointer-events: none;
 }
   :root{
-    --bg:#0b1220; --fg:#e9eef7; --muted:#a8b3c7; --card:#0f1729; --border:#22314f; --accent:#5dd6ff;
-    --wave1:#0b1f3f; --wave2:#0a1831; --wave3:#081228;
-    --btn:#0ea5e9; --btn-fg:#071225;
-    --shadow:0 12px 40px rgba(0,0,0,.35);
-    --sky-grad: radial-gradient(1200px 600px at 50% 120%, #061224 0%, transparent 65%);
+    --bg:#0a0f1e; --fg:#f0f4f8; --muted:#94a3b8; --card:#0f1729; --border:#1e293b; --accent:#60a5fa;
+    --wave1:#0d1d3f; --wave2:#0b1835; --wave3:#09132a;
+    --btn:#3b82f6; --btn-fg:#ffffff;
+    --shadow:0 20px 60px rgba(0,0,0,.4);
+    --sky-grad: radial-gradient(1400px 700px at 50% 140%, #0c1d3f 0%, transparent 70%);
   }
   .theme-light{
-    --bg:#eaf6ff; --fg:#0b1220; --muted:#465167; --card:#ffffff; --border:#dbe7f4; --accent:#0077ff;
-    --wave1:#9fd7ff; --wave2:#6ec2ff; --wave3:#4aaaf0;
+    --bg:#f8fafc; --fg:#0f172a; --muted:#475569; --card:#ffffff; --border:#e2e8f0; --accent:#2563eb;
+    --wave1:#bfdbfe; --wave2:#93c5fd; --wave3:#60a5fa;
     --btn:#2563eb; --btn-fg:#ffffff;
-    --shadow:0 10px 32px rgba(2,20,40,.15);
-    --sky-grad: radial-gradient(1200px 600px at 50% 120%, #bde4ff 0%, transparent 65%);
+    --shadow:0 10px 40px rgba(0,0,0,.08);
+    --sky-grad: radial-gradient(1400px 700px at 50% 140%, #dbeafe 0%, transparent 70%);
   }
 
-  *{box-sizing:border-box}
+  *{box-sizing:border-box; margin:0; padding:0}
   html,body{height:100%}
   body{
-    margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
     background:var(--bg); color:var(--fg); min-height:100%; overflow:hidden;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   }
 
   .scene{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none;}
-  .sky{position:absolute; inset:0; background:var(--sky-grad), linear-gradient(to bottom, transparent 0 60%, var(--bg) 100%)}
+  .sky{position:absolute; inset:0; background:var(--sky-grad), linear-gradient(to bottom, transparent 0 50%, var(--bg) 100%)}
   #starsCanvas{position:absolute; inset:0; display:block}
 
   .birds{position:absolute; inset:0; display:none}
   .theme-light .birds{display:block}
-  .bird{position:absolute; top:10vh; left:-12vw; width:52px; height:28px; animation:fly 18s linear infinite; opacity:.9}
+  .bird{position:absolute; top:10vh; left:-12vw; width:52px; height:28px; animation:fly 18s linear infinite; opacity:.7}
   .bird:nth-child(2){ top:22vh; animation-duration:22s; animation-delay:-6s; transform:scale(1.15)}
   .bird:nth-child(3){ top:34vh; animation-duration:20s; animation-delay:-10s; transform:scale(0.9)}
   @keyframes fly{0%{left:-12vw; transform:translateY(0)}50%{transform:translateY(-2vh)}100%{left:112vw; transform:translateY(0)}}
@@ -53,38 +54,64 @@
 
   .wrap{height:100%; display:grid; place-items:center; padding:24px}
   .card{
-    width:min(92vw, 760px); background:var(--card); border:1px solid var(--border); border-radius:28px;
-    padding:clamp(24px,5vw,48px); box-shadow:var(--shadow); text-align:center; position:relative; overflow:hidden;
-    backdrop-filter: blur(6px) saturate(110%);
+    width:min(94vw, 680px); background:var(--card); border:1px solid var(--border); border-radius:32px;
+    padding:clamp(32px,5vw,56px); box-shadow:var(--shadow); text-align:center; position:relative; overflow:hidden;
+    backdrop-filter: blur(12px) saturate(120%);
   }
   .card::after{content:""; position:absolute; inset:-40%;
-    background: radial-gradient(50% 50% at 50% 50%, var(--accent) 0%, transparent 45%);
-    opacity:.05; filter: blur(42px); animation:pulse 8s ease-in-out infinite}
-  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    background: radial-gradient(50% 50% at 50% 50%, var(--accent) 0%, transparent 50%);
+    opacity:.06; filter: blur(60px); animation:pulse 10s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.08) rotate(5deg)}}
 
-  header.top{display:flex; justify-content:flex-end; align-items:center; margin-bottom:6px}
-  h1{margin:8px 0 10px; font-weight:900; letter-spacing:-0.02em; line-height:1.05; font-size:clamp(34px,6.5vw,58px)}
+  header.top{display:flex; justify-content:flex-end; align-items:center; margin-bottom:12px}
+  .badge{
+    display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:24px;
+    background:linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent), #000 15%));
+    color:#ffffff; font-size:13px; font-weight:700; letter-spacing:0.3px;
+    box-shadow:0 4px 16px color-mix(in oklab, var(--accent), #000 50% / 30%);
+    margin-bottom:24px;
+  }
+  h1{margin:0 0 16px; font-weight:900; letter-spacing:-0.03em; line-height:1.02; font-size:clamp(36px,7vw,64px);
+     background:linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
+     -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
 
-  .price-block{margin:14px 0 18px}
-  .price-main{font-size:clamp(22px,4.2vw,30px); font-weight:900; color:var(--accent)}
-  .price-note{display:block; margin-top:6px; color:var(--muted); font-weight:700}
-  .price-asof{display:block; margin-top:4px; color:var(--muted); font-size:14px}
+  .price-block{margin:24px 0 28px; padding:24px; background:color-mix(in oklab, var(--accent), transparent 92%);
+              border:1px solid color-mix(in oklab, var(--accent), transparent 80%); border-radius:20px}
+  .price-main{font-size:clamp(26px,4.8vw,36px); font-weight:900; color:var(--accent); margin-bottom:12px;
+              text-shadow:0 2px 12px color-mix(in oklab, var(--accent), #000 50% / 25%)}
+  .price-note{display:block; color:var(--muted); font-weight:600; font-size:clamp(13px,2vw,15px); margin-bottom:8px}
+  .price-asof{display:block; color:var(--muted); font-size:13px; font-style:italic}
 
-  p{margin:0 0 22px; color:var(--muted); font-size:clamp(16px,2.4vw,18px)}
-  .row{display:flex; justify-content:center; gap:12px; align-items:center; flex-wrap:wrap}
+  .contact-section{margin:28px 0; padding:20px; background:color-mix(in oklab, var(--border), transparent 50%);
+                  border-radius:16px; border:1px solid var(--border)}
+  .contact-label{display:block; font-size:14px; font-weight:600; color:var(--muted); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.5px}
+  .contact-method{display:inline-flex; align-items:center; gap:10px; color:var(--accent); font-weight:700; font-size:16px;
+                 text-decoration:none; padding:12px 20px; border-radius:12px; background:color-mix(in oklab, var(--accent), transparent 90%);
+                 border:1px solid color-mix(in oklab, var(--accent), transparent 70%); transition:all .2s ease}
+  .contact-method:hover{background:color-mix(in oklab, var(--accent), transparent 85%); transform:translateY(-2px)}
 
-  .btn{appearance:none; border:0; cursor:pointer; border-radius:14px; padding:14px 18px; font-weight:800; letter-spacing:.2px;
-       display:inline-flex; align-items:center; gap:10px; text-decoration:none; transition:transform .08s ease,filter .2s ease,background .2s ease; position:relative; z-index:1}
-  .btn:active{transform:translateY(1px) scale(0.995)}
-  .btn-primary{background:linear-gradient(180deg, var(--btn) 0%, color-mix(in oklab,var(--btn),#000 12%) 100%); color:var(--btn-fg);
-               border:1px solid color-mix(in oklab,var(--btn),#000 20%); box-shadow:0 10px 26px color-mix(in oklab,var(--btn),#000 70% / 35%)}
-  .btn-ghost{background:transparent; color:var(--fg); border:1px solid var(--border); padding:12px 14px}
-  .icon{width:22px; height:22px; display:block}
+  .btn-row{display:flex; justify-content:center; gap:12px; align-items:center; flex-wrap:wrap; margin-top:32px}
+  .btn{appearance:none; border:0; cursor:pointer; border-radius:16px; padding:16px 32px; font-weight:800; letter-spacing:.3px;
+       display:inline-flex; align-items:center; gap:12px; text-decoration:none; transition:all .15s ease; position:relative; z-index:1; font-size:16px}
+  .btn:active{transform:translateY(1px) scale(0.98)}
+  .btn-primary{background:linear-gradient(180deg, var(--btn) 0%, color-mix(in oklab,var(--btn),#000 15%) 100%); color:var(--btn-fg);
+               border:1px solid color-mix(in oklab,var(--btn),#000 25%); box-shadow:0 12px 32px color-mix(in oklab,var(--btn),#000 60% / 40%)}
+  .btn-primary:hover{transform:translateY(-3px); box-shadow:0 16px 40px color-mix(in oklab,var(--btn),#000 60% / 50%)}
+  .btn-ghost{background:var(--card); color:var(--fg); border:1px solid var(--border); padding:14px 24px;
+             box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  .btn-ghost:hover{border-color:var(--accent); background:color-mix(in oklab, var(--accent), transparent 95%)}
+  .icon{width:24px; height:24px; display:block}
 
-  .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%); background:var(--card); border:1px solid var(--border); color:var(--fg);
-         padding:10px 14px; border-radius:12px; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease}
-  .toast.show{opacity:1; transform:translateX(-50%) translateY(-4px)}
+  .toast{position:fixed; left:50%; bottom:32px; transform:translateX(-50%); background:var(--card); border:1px solid var(--border); color:var(--fg);
+         padding:16px 24px; border-radius:16px; box-shadow:0 16px 48px rgba(0,0,0,.3); opacity:0; pointer-events:none; transition:all .3s ease; font-weight:600}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(-8px)}
 
+  @media (max-width: 640px){
+    .card{padding:24px}
+    h1{font-size:32px}
+    .btn-row{flex-direction:column; width:100%}
+    .btn{width:100%; justify-content:center}
+  }
   @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important}}
 </style>
 </head>
@@ -116,29 +143,44 @@
         <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme" title="Toggle light/dark"></button>
       </header>
 
-      <h1>🏷️ Domain is for sale!</h1>
+      <div class="badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+        LIVE PRICING
+      </div>
+
+      <h1>Premium Domain<br/>For Sale 🌊</h1>
 
       <div id="price" class="price-block">
-        <div class="price-main">🪙 Calculating price…</div>
+        <div class="price-main">💰 Calculating price…</div>
         <small class="price-note">Formula: $ASTER price (USD) × days since release × 100</small>
         <small class="price-asof">as of —</small>
       </div>
 
-      <p>Contact 📬: <a id="contactEmail" href="mailto:smartwatchgpro@gmail.com" style="color:inherit; text-decoration:underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px;">smartwatchgpro@gmail.com</a></p>
-
-      <div class="row" style="margin-top:14px">
-        <a id="contactBtn" class="btn btn-primary"
-           href="mailto:smartwatchgpro@gmail.com?subject=Domain%20Inquiry%20🌐&body=Hi%2C%20I%27m%20interested%20in%20your%20domain.">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16v12H4z"/><path d="m22 6-10 7L2 6"/>
+      <div class="contact-section">
+        <span class="contact-label">💬 Contact via Telegram</span>
+        <a href="https://t.me/ultimatemarketingbot" target="_blank" rel="noopener noreferrer" class="contact-method">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
           </svg>
-          Inquire now!
+          @ultimatemarketingbot
+        </a>
+      </div>
+
+      <div class="btn-row">
+        <a id="contactBtn" class="btn btn-primary"
+           href="https://t.me/ultimatemarketingbot" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+          </svg>
+          Message on Telegram
         </a>
       </div>
     </section>
   </div>
 
-  <div id="toast" class="toast">Copied to clipboard ✅</div>
+  <div id="toast" class="toast">Opened Telegram ✅</div>
 
 <script>
 (function(){
@@ -171,8 +213,8 @@
   const root=document.documentElement, toggle=document.getElementById('themeToggle');
   function setIcon(mode){
     toggle.innerHTML=(mode==='light')
-      ? `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`
-      : `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+      ? `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`
+      : `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
   }
   function setTheme(mode){
     if(mode==='light'){ root.classList.add('theme-light'); localStorage.setItem('theme','light'); setIcon('light'); }
@@ -246,12 +288,12 @@
       const usd=await fetchUsd();
       const days=daysSinceRelease();
       const calc=usd*days*100;
-      PRICE_EL.querySelector('.price-main').textContent = `🤑 Current price: ${fmtUSD(calc)}`;
-      PRICE_EL.querySelector('.price-note').innerHTML =`Formula: $ASTER price ($${usd.toFixed(2)}) × <a href="https://bscscan.com/token/0x000Ae314E2A2172a039B26378814C252734f556A" target="_blank" style="color:var(--accent);text-decoration:underline;">${days} days</a> × 100`;
+      PRICE_EL.querySelector('.price-main').textContent = `💰 ${fmtUSD(calc)}`;
+      PRICE_EL.querySelector('.price-note').innerHTML =`Formula: $ASTER price ($${usd.toFixed(2)}) × <a href="https://bscscan.com/token/0x000Ae314E2A2172a039B26378814C252734f556A" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;font-weight:700">${days} days</a> × 100`;
       PRICE_EL.querySelector('.price-asof').textContent = asOfLine();
     }catch(e){
-      PRICE_EL.querySelector('.price-main').textContent = '🤑 Current price: —';
-      PRICE_EL.querySelector('.price-note').textContent = 'Formula: $ASTER price (USD) * days since release * 100';
+      PRICE_EL.querySelector('.price-main').textContent = '💰 Price unavailable';
+      PRICE_EL.querySelector('.price-note').textContent = 'Formula: $ASTER price (USD) × days since release × 100';
       PRICE_EL.querySelector('.price-asof').textContent = asOfLine();
     }
   }
@@ -259,6 +301,17 @@
   updatePrice();
   setInterval(updatePrice, 10000);
 })();
+
+/* ---------- Toast on Telegram click ---------- */
+(function(){
+  const btn = document.getElementById('contactBtn');
+  const toast = document.getElementById('toast');
+  btn.addEventListener('click', () => {
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  });
+})();
 </script>
 </body>
 </html>
+
